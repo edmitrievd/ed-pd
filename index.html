@@ -22,7 +22,7 @@
         const ctx = canv.getContext('2d');
         let x = 0;
         let y = 0;
-        let color = "black";
+        let color = 'black';
         function draw() {
             ctx.fillStyle = 'white';
             ctx.fillRect(0, 0, 300, 300);
@@ -43,13 +43,13 @@
                 y = y + 10;
             }
             if (event.key === 'g') {
-                color = "green"
+                color = 'green';
             }
             if (event.key === 'b') {
-                color = "black"
+                color = 'black';
             }
             if (event.key === 'o') {
-                color = "orange"
+                color = 'orange';
             }
         }
         addEventListener('keydown', move);
