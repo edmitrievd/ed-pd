@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas</title>
+</head>
+<body>
+    <h1>Interaktīvs Canvas Kvadrāts</h1>
+    <p>Izmantojiet bultiņu taustiņus, lai pārvietotu kvadrātu. Nospiediet g, b vai o, lai mainītu krāsu.</p>
+    <canvas id="canv" width="300" height="300"></canvas>
+    <ul>
+        <li>Zaļš (g)</li>
+        <li>Melns (b)</li>
+        <li>Oranžs (o)</li>
+    </ul>
+
+    <a href="https://lv.wikipedia.org/wiki/Kvadr%C4%81ts">Uzzinājiet vairāk par kvadrātu</a>
+
+    <br><br>
+    <img src="https://png.pngtree.com/png-vector/20240712/ourlarge/pngtree-black-square-with-smiling-eyes-vector-png-image_7056394.png" width="300" height="300" alt="Kvadrāts">
+    <script>
+        const canv = document.getElementById('canv');
+        const ctx = canv.getContext('2d');
+        let x = 0;
+        let y = 0;
+        let color = "black";
+        function draw() {
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, 300, 300);
+            ctx.fillStyle = color;
+            ctx.fillRect(x, y, 30, 30);
+        }
+        function move(event) {
+            if (event.key === 'ArrowRight') {
+                x = x + 10;
+            }
+            if (event.key === 'ArrowLeft') {
+                x = x - 10;
+            }
+            if (event.key === 'ArrowUp') {
+                y = y - 10;
+            }
+            if (event.key === 'ArrowDown') {
+                y = y + 10;
+            }
+            if (event.key === 'g') {
+                color = "green"
+            }
+            if (event.key === 'b') {
+                color = "black"
+            }
+            if (event.key === 'o') {
+                color = "orange"
+            }
+        }
+        addEventListener('keydown', move);
+        setInterval(draw, 10);
+    </script>
+</body>
+</html>
